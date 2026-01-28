@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoger of Lager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hoger of Lager</h1>
+        <p>Ik denk aan een nummer tussen 1 en 100. Raad het!</p>
+        
+        <input type="number" id="guess" placeholder="Voer je gok in" min="1" max="100">
+        <button onclick="checkGuess()">Gok!</button>
+        
+        <p id="message"></p>
+        <p id="attempts">Pogingen: 0</p>
+        <button onclick="resetGame()" class="reset">Nieuw spel</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
