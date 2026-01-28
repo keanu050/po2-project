@@ -8,3 +8,16 @@
         document.querySelector('#guess').value = '';
         document.querySelector('#attempts').textContent = 'Pogingen: 0';
     }
+
+    function checkGuess() {
+    const guess = parseInt(document.querySelector('#guess').value);
+    const messageEl = document.querySelector('#message');
+    
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        messageEl.textContent = 'Voer een getal tussen 1 en 100 in!';
+        messageEl.style.color = 'orange';
+        return;
+    }
+
+    attempts++;
+    document.querySelector('#attempts').textContent = 'Pogingen: ' + attempts;
