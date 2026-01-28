@@ -1,6 +1,8 @@
 let board = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let gameActive = true;
+let resetTimer = null;
+let timeRemaining = 0;
 
 const winningConditions = [
   [0, 1, 2],
@@ -33,6 +35,7 @@ function handleCellClick(e) {
 }
 
 function handleReset() {
+    clearTimeout(resetTimer);
     resetGame();
     updateDisplay();
 }
@@ -64,6 +67,30 @@ function resetGame() {
     board = ['', '', '', '', '', '', '', '', ''];
     currentPlayer = 'X';
     gameActive = true;
+    timeRemaining = 0;
+}
+
+function startResetTimer() {
+    timeRemaining = 5;
+    resetTimer = setInterval(() => {
+        timeRemaining--;
+        updateTimerDisplay();
+        
+        if (timeRemaining <= 0) {
+            clearInterval(resetTimer);
+            resetGame();
+            updateDisplay();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    const winner = checkForWinner();
+    if (winner) {
+        statusDisplay.textContent = `Game Over! ${winner} Wins! Resetting in ${timeRemaining}s`;
+    } else {
+        statusDisplay.textContent = `It's a Draw! Resetting in ${timeRemaining}s`;
+    }
 }
 
 function updateDisplay() {
@@ -72,12 +99,7 @@ function updateDisplay() {
     });
 
     if (!gameActive) {
-        let winner = checkForWinner();
-        if (winner) {
-            statusDisplay.textContent = `Game Over! ${winner} Wins!`;
-        } else {
-            statusDisplay.textContent = "It's a Draw!";
-        }
+        startResetTimer();
     } else {
         statusDisplay.textContent = `Current Player: ${currentPlayer}`;
     }
