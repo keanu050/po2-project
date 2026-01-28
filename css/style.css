@@ -35,9 +35,3 @@ button {
     border: 1px solid #000;
     cursor: pointer;
 }
-
-button:hover { background: #ddd; }
-
-#message { font-weight: bold; margin: 12px 0; }
-
-#attempts { font-size: 13px; color: #333; }
