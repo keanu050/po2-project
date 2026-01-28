@@ -21,3 +21,25 @@
 
     attempts++;
     document.querySelector('#attempts').textContent = 'Pogingen: ' + attempts;
+     if (guess === secretNumber) {
+        messageEl.textContent = 'Correct! Je hebt het geraden in ' + attempts + ' pogingen!';
+        messageEl.style.color = 'green';
+        document.querySelector('#guess').disabled = true;
+    } else if (guess < secretNumber) {
+        messageEl.textContent = 'Hoger!';
+        messageEl.style.color = 'blue';
+    } else {
+        messageEl.textContent = 'Lager!';
+        messageEl.style.color = 'red';
+    }
+    
+    document.querySelector('#guess').value = '';
+}
+
+function resetGame() {
+    document.querySelector('#guess').disabled = false;
+    startGame();
+}
+
+
+startGame();
