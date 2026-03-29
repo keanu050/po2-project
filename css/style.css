@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/dice-5012425_1920.jpg  ');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #000;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.67);
+    color: #fff;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input {
+    background: #222;
+    border: 1px solid #555;
+    color: #fff;
+}
+
+button {
+    background: #333;
+    border: 1px solid #666;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #555;
+}
+
+#message { font-weight: bold; margin: 12px 0; }
+
+#attempts { font-size: 13px; color: #666; }
